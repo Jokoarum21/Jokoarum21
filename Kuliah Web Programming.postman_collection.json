@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "d0e7a308-18bf-4f49-a140-cc2f2be55a57",
+		"name": "Kuliah Web Programming",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "606366"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"admin123\",\r\n    \"role\":\"admin\",\r\n    \"email\":\"admin123@gmail.com\",\r\n    \"password\":\"admin\",\r\n    \"slugName\":\"admin123-slug\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin12345@gmail.com\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGUiOiJhZG1pbiIsIl9pZCI6IjY1ZTU1MWRmOGRjNjkxNjBhY2ZjZTZiYSIsIm5hbWUiOiJBZG1pbjEyMzQ1IiwiZW1haWwiOiJhZG1pbjEyMzQ1QGdtYWlsLmNvbSIsInBhc3N3b3JkIjpudWxsLCJzbHVnTmFtZSI6ImFkbWluMTIzNDUtc2x1ZyIsImNyZWF0ZWRBdCI6IjIwMjQtMDMtMDRUMDQ6NDU6MTkuMTM5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDMtMDRUMDQ6NDU6MTkuMTM5WiIsIl9fdiI6MH0sImlhdCI6MTcwOTUyNzU1OSwiZXhwIjoxNzQxMDYzNTU5fQ.eGkhpRhyLW5DPl629fCpssV8EGaOXXyGM_2OVW0tsjU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGUiOiJhZG1pbiIsIl9pZCI6IjY1ZTQ4ZWI5OWViZTI5MzVkMDRjMjkyOCIsIm5hbWUiOiJBZG1pbjEyMyIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicGFzc3dvcmQiOm51bGwsInNsdWdOYW1lIjoiYWRtaW4xMjMtc2x1ZyIsImNyZWF0ZWRBdCI6IjIwMjQtMDMtMDNUMTQ6NTI6NDEuNjg5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDMtMDNUMTQ6NTI6NDEuNjg5WiIsIl9fdiI6MH0sImlhdCI6MTcwOTQ3ODY0OCwiZXhwIjoxNzQxMDE0NjQ4fQ.FetetkhAlYWi9ppEkYr-q3RfDhP9eH19yRcZlkHabu4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make-admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGUiOiJhZG1pbiIsIl9pZCI6IjY1ZTQ4ZWI5OWViZTI5MzVkMDRjMjkyOCIsIm5hbWUiOiJBZG1pbjEyMyIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicGFzc3dvcmQiOm51bGwsInNsdWdOYW1lIjoiYWRtaW4xMjMtc2x1ZyIsImNyZWF0ZWRBdCI6IjIwMjQtMDMtMDNUMTQ6NTI6NDEuNjg5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDMtMDNUMTQ6NTI6NDEuNjg5WiIsIl9fdiI6MH0sImlhdCI6MTcwOTQ3ODY0OCwiZXhwIjoxNzQxMDE0NjQ4fQ.FetetkhAlYWi9ppEkYr-q3RfDhP9eH19yRcZlkHabu4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/make-admin/65e48eb99ebe2935d04c2928",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"make-admin",
+								"65e48eb99ebe2935d04c2928"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make-user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGUiOiJhZG1pbiIsIl9pZCI6IjY1ZTQ4ZWI5OWViZTI5MzVkMDRjMjkyOCIsIm5hbWUiOiJBZG1pbjEyMyIsImVtYWlsIjoiYWRtaW4xMjNAZ21haWwuY29tIiwicGFzc3dvcmQiOm51bGwsInNsdWdOYW1lIjoiYWRtaW4xMjMtc2x1ZyIsImNyZWF0ZWRBdCI6IjIwMjQtMDMtMDNUMTQ6NTI6NDEuNjg5WiIsInVwZGF0ZWRBdCI6IjIwMjQtMDMtMDNUMTQ6NTI6NDEuNjg5WiIsIl9fdiI6MH0sImlhdCI6MTcwOTQ3ODY0OCwiZXhwIjoxNzQxMDE0NjQ4fQ.FetetkhAlYWi9ppEkYr-q3RfDhP9eH19yRcZlkHabu4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/make-user/65e48eb99ebe2935d04c2928",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"make-user",
+								"65e48eb99ebe2935d04c2928"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GetProducts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "allProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/product/allProducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"allProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "getCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\":\"Cloth\",\r\n    \"slugCategory\":\"cloth\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCategoryByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category/65e49579e904f5095014bb40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"65e49579e904f5095014bb40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editCategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\":\"65e49579e904f5095014bb40\",\r\n    \"category\":\"Cloth2\",\r\n    \"slugCategory\":\"cloth2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/category/65e49579e904f5095014bb40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"65e49579e904f5095014bb40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category/65e49579e904f5095014bb40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"65e49579e904f5095014bb40"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
